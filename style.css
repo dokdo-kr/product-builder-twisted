@@ -81,8 +81,8 @@ h2 {
 }
 
 /* --- UNIFIED & HIGH-CONTRAST SELECTION --- */
-.options-group input[type="radio"]:checked + label,
-.options-group-checkbox input[type="checkbox"]:checked + label {
+.options-group label:has(input[type="radio"]:checked),
+.options-group-checkbox label:has(input[type="checkbox"]:checked) {
     background-color: var(--color-primary);
     color: var(--color-white);
     border: 3px solid var(--color-primary-dark); /* Make border thicker and darker */
