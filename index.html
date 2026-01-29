@@ -1,14 +1,76 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>오늘 뭐 먹지?</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="app-container">
+    <h1>오늘 뭐 먹지?</h1>
+
+    <div class="selection-container">
+      <h2>1. 식사 시간을 선택하세요.</h2>
+      <div class="options-group" id="meal-time-options">
+        <label><input type="radio" name="mealTime" value="아침"> 아침</label>
+        <label><input type="radio" name="mealTime" value="점심"> 점심</label>
+        <label><input type="radio" name="mealTime" value="저녁"> 저녁</label>
+      </div>
+    </div>
+
+    <div class="selection-container">
+      <h2>2. 상황 / 목적을 선택하세요.</h2>
+      <div class="options-group" id="situation-options">
+        <label><input type="radio" name="situation" value="혼자 간단히"> 혼자 간단히</label>
+        <label><input type="radio" name="situation" value="든든하게 한 끼"> 든든하게 한 끼</label>
+        <label><input type="radio" name="situation" value="여유 있게"> 여유 있게</label>
+        <label><input type="radio" name="situation" value="회식 / 모임"> 회식 / 모임</label>
+        <label><input type="radio" name="situation" value="데이트"> 데이트</label>
+        <label><input type="radio" name="situation" value="가족 식사"> 가족 식사</label>
+        <label><input type="radio" name="situation" value="야식"> 야식</label>
+        <label><input type="radio" name="situation" value="술안주"> 술안주</label>
+      </div>
+    </div>
+
+    <div class="selection-container">
+      <h2>3. 상황 제약을 선택하세요. (중복 가능)</h2>
+      <div class="options-group-checkbox" id="constraint-options">
+        <label><input type="checkbox" value="시간 없음 (빠르게)"> ⏱ 시간 없음 (빠르게)</label>
+        <label><input type="checkbox" value="가성비"> 💸 가성비</label>
+        <label><input type="checkbox" value="가볍게"> 🥗 가볍게</label>
+        <label><input type="checkbox" value="든든하게"> 🍖 든든하게</label>
+        <label><input type="checkbox" value="자극적인 음식 OK"> 🌶 자극적인 음식 OK</label>
+        <label><input type="checkbox" value="속 편한 음식"> 😌 속 편한 음식</label>
+        <label><input type="checkbox" value="배달 가능"> 🥡 배달 가능</label>
+        <label><input type="checkbox" value="집에서 해먹기"> 🔥 집에서 해먹기</label>
+      </div>
+    </div>
+
+    <div class="selection-container">
+      <h2>4. 음식 타입을 선택하세요.</h2>
+      <div class="options-group" id="food-type-options">
+        <label><input type="radio" name="foodType" value="밥"> 밥</label>
+        <label><input type="radio" name="foodType" value="면"> 면</label>
+        <label><input type="radio" name="foodType" value="국 / 탕"> 국 / 탕</label>
+        <label><input type="radio" name="foodType" value="찌개"> 찌개</label>
+        <label><input type="radio" name="foodType" value="볶음"> 볶음</label>
+        <label><input type="radio" name="foodType" value="구이"> 구이</label>
+        <label><input type="radio" name="foodType" value="찜"> 찜</label>
+        <label><input type="radio" name="foodType" value="튀김"> 튀김</label>
+        <label><input type="radio" name="foodType" value="간편식"> 간편식</label>
+        <label><input type="radio" name="foodType" value="특식"> 특식</label>
+        <label><input type="radio" name="foodType" value="간식 / 디저트"> 간식 / 디저트</label>
+      </div>
+    </div>
+
+    <button id="recommend-button">메뉴 추천받기</button>
+
+    <div id="result-container">
+      <h2>추천 메뉴</h2>
+      <p id="result-text">여기에 추천 메뉴가 표시됩니다.</p>
+    </div>
+  </div>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>

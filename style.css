@@ -1,1 +1,141 @@
-/* Add styles here */
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+    --color-primary: #0d6efd; /* A professional blue */
+    --color-primary-dark: #0a58ca;
+    --color-light-gray: #f8f9fa;
+    --color-text: #212529;
+    --color-white: #ffffff;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--color-light-gray);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.app-container {
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Jua', sans-serif;
+    color: var(--color-text);
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    color: var(--color-text);
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.selection-container {
+    margin-bottom: 40px;
+}
+
+.options-group, .options-group-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.options-group label, .options-group-checkbox label {
+    background: var(--color-white);
+    border: 1px solid #dee2e6;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.options-group label:hover, .options-group-checkbox label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-primary);
+}
+
+.options-group input[type="radio"], .options-group-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+/* --- UNIFIED & HIGH-CONTRAST SELECTION --- */
+.options-group input[type="radio"]:checked + label,
+.options-group-checkbox input[type="checkbox"]:checked + label {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 3px solid var(--color-primary-dark); /* Make border thicker and darker */
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgba(13, 110, 253, 0.25);
+}
+
+#recommend-button {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2);
+}
+
+#recommend-button:hover {
+    transform: translateY(-3px);
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 12px 25px rgba(13, 110, 253, 0.3);
+}
+
+#result-container {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#result-container h2 {
+    border: none;
+    padding-bottom: 0;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+#result-text {
+    font-family: 'Jua', sans-serif;
+    font-size: 2.2em;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 10px;
+}
